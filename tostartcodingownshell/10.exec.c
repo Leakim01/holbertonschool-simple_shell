@@ -6,6 +6,7 @@
  *
  * Return: Always 0.
  */
+
 int main(void)
 {
 	char *argv[] = {"/bin/ls", "-l", "/usr/", NULL};
