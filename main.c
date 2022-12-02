@@ -1,14 +1,14 @@
 #include "main.h"
 /**
-* main - Function.
-*
-* Return: 0.
-*/
+ * main - Function.
+ *
+ * Return: 0.
+ */
 
 int main(void)
 {
 	char *buffer = NULL, *token;
-	size_t str = 0, len = 0, inputchar;
+	size_t str = 0, len = 0;
 
 	while (1)
 	{
@@ -18,8 +18,8 @@ int main(void)
 			getcwd(cwd, sizeof(cwd));
 			printf("%s\t$ ", cwd);
 		}
-		inputchar = getline(&buffer, &len, stdin);
-		if (inputchar == EOF)
+		getline(&buffer, &len, stdin);
+		if (getline(&buffer, &len, stdin) == EOF)
 		{
 			printf("\nsee you soon\n");
 			break;
@@ -30,9 +30,27 @@ int main(void)
 		if (strcmp(token, "exit") == 0)
 		{
 			printf("miouhhhfdfdkflmdfk\n");
-			free(buffer);
 			return (str);
 		}
+		/*if (strcmp(token, "env") == 0)
+		{
+			int i = 0;
+			while (env[i])
+			{
+				printf("%s\n", env[i]);
+				i++;
+			}
+			return(0);
+		}*/
+		if (pathverify(args[0]) == 1)
+		{
+			args[0] = which(args[0]);
+			if (!args[0])
+			{
+				perror("problem");
+				continue;
+			}
+		}/*fork*/
 	}
 	free(buffer);
 	return(0);
@@ -46,17 +64,19 @@ int main(void)
  */
 /*int created_fork(char **args, char **env)
 {
-	int status;
+	int status = 0;
 	pid_t child_pid;
 
 	child_pid = fork();
-	if (child_pid == -1)
+	if (child_pid == 0)
 	{
-		perror("Error:");
-		return (0);
+		if (execve(args[0], args, env) == -1)
+		{
+			perror("Error:");
+			return (0);
+		}
 	}
 	else
 		wait(&status);
 	return (0);
 }*/
-
