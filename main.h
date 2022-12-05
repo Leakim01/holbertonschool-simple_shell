@@ -1,5 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -10,7 +11,7 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 #include <fcntl.h>
-int exec_cmd (char **argv, char **env);
-/*int main (void);*/
+int main(int ac, char *av[], char *ev[]);
+
 #endif
 

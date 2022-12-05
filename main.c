@@ -1,91 +1,87 @@
 #include "main.h"
+#include <signal.h>
+
+
 /**
  * main - Function.
  *
  * Return: 0.
  */
 
-int main (char **argv, char **env)
+int main(int ac, char *av[], char *ev[])
 {
-	char *buffer = NULL, *token, args[1204];
-	size_t str = 0, len = 0;
-	(void) argv;
-	(void) env;
+	char *buffer = NULL, *token;
+	char *args;
+	size_t str = 0, len = 0, inputchar;
+
+	(void) ac;
+	(void) av;
+
 
 	while (1)
 	{
 		if (isatty(0) == 1)
 		{
 			char cwd[1024];
+
 			getcwd(cwd, sizeof(cwd));
 			printf("%s\t$ ", cwd);
+			args = strtok(cwd, " ");
+			/*exec_cmd(args, ev);*/
 		}
-		getline(&buffer, &len, stdin);
-		if (getline(&buffer, &len, stdin) == (size_t) EOF)
+		
+		inputchar = getline(&buffer, &len, stdin);
+		if (inputchar == (size_t) EOF)
 		{
-			printf("\nsee you soon\n");
-			break;
+			if (buffer)
+			{
+				free(buffer);
+				buffer = NULL;
+			}
+			printf("\nsee you soon2\n");
+			exit(0);
+		}
+		if (strcmp(buffer, "\n") == 0)
+		{
+			free(buffer);
+			buffer = NULL;
+			continue;
 		}
 		token = strtok(buffer, " \t\n");
 		if (!token)
 			break;
+		/*if (strcmp(buffer, "\n") == 0)
+			return (str);*/
 		if (strcmp(token, "exit") == 0)
 		{
-			printf("miouhhhfdfdkflmdfk\n");
+			free(buffer);
+			printf("see you soon \n");
 			return (str);
 		}
-		/*if (strcmp(token, "env") == 0)
+		if (strcmp(token, "env") == 0)
 		{
-			int i = 0;
-			while (env[i])
-			{
-				printf("%s\n", env[i]);
-				i++;
-			}
-			return(0);
-		}*/
-		if (exec_cmd(args, env) == 0)
-		{
-			int i = 0;
-			if (!args[i])
-				printf("error");
+			for (int i = 0; ev[i]; i++)
+				printf("%s\n", ev[i]);
+			return (str);
 		}
-		
-		/*if (pathverify(args[0]) == 1)
+		/*if (sigterm_handler)
 		{
-			args[0] = which(args[0]);
-			if (!args[0])
-			{
-				perror("problem");
-				continue;
-			}
-		}*//*fork*/
+			return (0);
+		}*/
+		/*not sure if it works*/
+		for (str = 0; str < 1024 && token != NULL; str++)
+		{
+			args[str] = *token;
+			token = strtok(NULL, "\t\n\r");
+		}
 	}
 	free(buffer);
-	return(0);
-}
-
-/**
- * created_fork - Create new proccess.
- * @args: Strings.
- * @env: Environment variables.
- * Return: 0.
- */
-/*int created_fork(char **args, char **env)
-{
-	int status = 0;
-	pid_t child_pid;
-
-	child_pid = fork();
-	if (child_pid == 0)
-	{
-		if (execve(args[0], args, env) == -1)
-		{
-			perror("Error:");
-			return (0);
-		}
-	}
-	else
-		wait(&status);
 	return (0);
+}
+/*
+void sigintHandler(int sig_num)
+{
+	signal(SIGINT, sigintHandler);
+	printf("\n Cannot be terminated using Ctrl+C \n");
+	fflush(stdout);
 }*/
