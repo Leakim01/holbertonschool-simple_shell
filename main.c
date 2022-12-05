@@ -5,10 +5,12 @@
  * Return: 0.
  */
 
-int main(void)
+int main (char **argv, char **env)
 {
-	char *buffer = NULL, *token;
+	char *buffer = NULL, *token, args[1204];
 	size_t str = 0, len = 0;
+	(void) argv;
+	(void) env;
 
 	while (1)
 	{
@@ -19,7 +21,7 @@ int main(void)
 			printf("%s\t$ ", cwd);
 		}
 		getline(&buffer, &len, stdin);
-		if (getline(&buffer, &len, stdin) == EOF)
+		if (getline(&buffer, &len, stdin) == (size_t) EOF)
 		{
 			printf("\nsee you soon\n");
 			break;
@@ -42,7 +44,14 @@ int main(void)
 			}
 			return(0);
 		}*/
-		if (pathverify(args[0]) == 1)
+		if (exec_cmd(args, env) == 0)
+		{
+			int i = 0;
+			if (!args[i])
+				printf("error");
+		}
+		
+		/*if (pathverify(args[0]) == 1)
 		{
 			args[0] = which(args[0]);
 			if (!args[0])
@@ -50,7 +59,7 @@ int main(void)
 				perror("problem");
 				continue;
 			}
-		}/*fork*/
+		}*//*fork*/
 	}
 	free(buffer);
 	return(0);

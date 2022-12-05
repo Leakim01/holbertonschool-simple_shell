@@ -10,8 +10,7 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 #include <fcntl.h>
-extern char **env;
-int main (void);
-
+int exec_cmd (char **argv, char **env);
+/*int main (void);*/
 #endif
 
