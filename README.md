@@ -41,7 +41,7 @@ You need to type "`man ./man_1_simple_shell`" command to know how to use our Sim
 | Flowcharts | Contains the diagram explaining the order of operation of our Simple Shell  |
 | ToStartCodingOwnShell | Contains all the test files to understand how to create the Simple Shell
 
-## :calendar_spiral: ORGANISATION :
+## :spiral_calendar: ORGANISATION :
 
 - Trello
 - Diagrams Flowcharts Link:  
@@ -66,5 +66,4 @@ Dec. 2022
 -- À CHANGER / RAJOUTER --
 
 Lien du Flowchart
-Liens des linkedin
 File Names
