@@ -1,0 +1,74 @@
+.TH man_1_simple_shell
+
+.SH NAME
+
+.B Simple Shell - Simple Form of the real Shell
+
+.SH SYNOPSIS
+
+.B #include "main.h"
+
+.B int main(int ac, char *av[], char *ev[];
+
+.B Simple Shell
+bash [options] [file]
+
+.SH DESCRIPTION
+
+.B Simple Shell
+is a mirroring of the real Shell (bash). It an interpreter that executes commands read from the standard input or from a file.
+
+.SH OPTIONS
+
+.TP
+.BR ls
+Used to display all the files names in the current path.
+
+.TP
+.BR pwd
+Used to know in which current path you are.
+
+.SH EXAMPLES
+
+.TP
+.B Display all the files in current path with their informations.
+
+"ls -l" -->
+-rw-r--r-- 1 root root   433 Nov 21 05:16 0-main.c
+-rw-r--r-- 1 root root   488 Nov 21 07:51 0-read_textfile.c
+-rw-r--r-- 1 root root   463 Nov 22 01:45 1-create_file.c
+-rw-r--r-- 1 root root   345 Nov 21 07:55 1-main.c
+-rw-r--r-- 1 root root   463 Nov 22 02:17 2-append_text_to_file.c
+-rw-r--r-- 1 root root   353 Nov 22 01:49 2-main.c
+
+.TP 
+.B Print a string
+_printf("Hello I'm a string !");
+
+_printf("[%s]\\n", "Yeah, me too !");
+
+.TP
+.B Print an integer
+_printf("We are only [%d] students to create our own _printf function\\n", 2);
+
+.SH RETURN VALUE
+
+It returns the number of characters that are printed. If there is some error then it returns a negative value.
+
+.SH ALSO
+
+If you need to learn more about the original function of printf, you can use "man printf" in your terminal or Google it ;).
+
+.SH BUGS
+
+Any bugs ? Not our fault. Ask to Taieb u.ù
+
+.SH AUTHORS
+
+Vanessa TESSIER - Redginald GODEAU - Mickael MANGIN
+
+Holberton School TLSE - Cohort 19
+
+.SH COPYRIGHT
+
+Copyright © 2022 Holberton Shool TLSE - Cohort 19. - Dec. 2022.

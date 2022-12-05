@@ -49,13 +49,13 @@ You need to type "`man ./man_1_simple_shell`" command to know how to use our Sim
 
 ### :writing_hand: AUTHORS : 
 :small_orange_diamond: Vanessa TESSIER
-[![linkedin](https://img.shields.io/badge/linkedin-white?style=for-the-badge&logo=linkedin&logoColor=black)](https://www.linkedin.com/)
+[![linkedin](https://img.shields.io/badge/linkedin-white?style=for-the-badge&logo=linkedin&logoColor=black)](https://www.linkedin.com/in/vanessa-tessier-601794252/)
 
 :small_orange_diamond: Redginald GODEAU
-[![linkedin](https://img.shields.io/badge/linkedin-white?style=for-the-badge&logo=linkedin&logoColor=black)](https://www.linkedin.com/in/vanessa-tessier-601794252/)
+[![linkedin](https://img.shields.io/badge/linkedin-white?style=for-the-badge&logo=linkedin&logoColor=black)](https://www.linkedin.com/in/redginald-godeau-04ab8a254/)
 
 :small_orange_diamond: Mickael MANGIN
-[![linkedin](https://img.shields.io/badge/linkedin-white?style=for-the-badge&logo=linkedin&logoColor=black)](https://www.linkedin.com/in/vanessa-tessier-601794252/)
+[![linkedin](https://img.shields.io/badge/linkedin-white?style=for-the-badge&logo=linkedin&logoColor=black)](https://www.linkedin.com/in/micka%C3%ABl-mangin-331aa2170/)
 
 ### :mortar_board: SCHOOL :
 
