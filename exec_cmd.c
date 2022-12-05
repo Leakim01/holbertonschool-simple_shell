@@ -13,7 +13,7 @@ int exec_cmd (char *av[], char *ev[])
 	char *cmd;
 	pid_t pid;
 
-	if (!argv[0])
+	if (!av[0])
 		return (1);
 
 	cmd = malloc(sizeof(char) * 1024);
@@ -21,8 +21,8 @@ int exec_cmd (char *av[], char *ev[])
 		return (1);
 
 	strcpy(cmd, path);
-	strcat(cmd, argv[0]);
-	argv[0] = strdup(cmd);
+	strcat(cmd, av[0]);
+	av[0] = strdup(cmd);
 
 	free(cmd);
 
@@ -33,7 +33,7 @@ int exec_cmd (char *av[], char *ev[])
 			printf("Fork Error\n");
 			break;
 		case 0:
-			if (execve(argv[0], argv, env) == -1)
+			if (execve(av[0], av, ev) == -1)
 				printf("Execut Error\n");
 			break;
 		case 1:

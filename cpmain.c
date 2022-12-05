@@ -1,40 +1,25 @@
 #include "main.h"
 #include <signal.h>
 
+
 /**
  * main - Function.
  *
  * Return: 0.
  */
 
-void handle_signal(int signal)
-{
-	/*char *prompt = {"\nYour lock with ussssss\n"};*/
-	(void) signal;
-	char cwd[1024];
-	getcwd(cwd, sizeof(cwd));
-	printf("\n%s\t$ ", cwd);
-	fflush(stdout);
-	/*write(STDOUT_FILENO, prompt, strlen(prompt));
-	exit (0);*/
-}
-
 int main(int ac, char *av[], char *ev[])
 {
 	char *buffer = NULL, *token;
 	char *args;
 	size_t str = 0, len = 0, inputchar;
+
 	(void) ac;
 	(void) av;
 
-	signal(SIGINT, handle_signal);
+
 	while (1)
 	{
-		/*if (signal(SIGINT, handle_signal))
-		{
-			printf("tesssssssssssssssst");
-			continue;
-		}*/
 		if (isatty(0) == 1)
 		{
 			char cwd[1024];
@@ -44,6 +29,7 @@ int main(int ac, char *av[], char *ev[])
 			args = strtok(cwd, " ");
 			/*exec_cmd(args, ev);*/
 		}
+		
 		inputchar = getline(&buffer, &len, stdin);
 		if (inputchar == (size_t) EOF)
 		{
@@ -55,7 +41,6 @@ int main(int ac, char *av[], char *ev[])
 			printf("\nsee you soon2\n");
 			exit(0);
 		}
-
 		if (strcmp(buffer, "\n") == 0)
 		{
 			free(buffer);
@@ -65,6 +50,8 @@ int main(int ac, char *av[], char *ev[])
 		token = strtok(buffer, " \t\n");
 		if (!token)
 			break;
+		/*if (strcmp(buffer, "\n") == 0)
+			return (str);*/
 		if (strcmp(token, "exit") == 0)
 		{
 			free(buffer);
@@ -77,6 +64,10 @@ int main(int ac, char *av[], char *ev[])
 				printf("%s\n", ev[i]);
 			return (str);
 		}
+		/*if (sigterm_handler)
+		{
+			return (0);
+		}*/
 		/*not sure if it works*/
 		for (str = 0; str < 1024 && token != NULL; str++)
 		{
@@ -87,3 +78,10 @@ int main(int ac, char *av[], char *ev[])
 	free(buffer);
 	return (0);
 }
+/*
+void sigintHandler(int sig_num)
+{
+	signal(SIGINT, sigintHandler);
+	printf("\n Cannot be terminated using Ctrl+C \n");
+	fflush(stdout);
+}*/
