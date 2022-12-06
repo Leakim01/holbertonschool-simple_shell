@@ -2,55 +2,55 @@
 #include <signal.h>
 
 /**
- * main - Function.
+ * handle_signal - Crtl+C doesnt leave
+ * @signal: int
  *
- * Return: 0.
+ * Return: While.
  */
 
 void handle_signal(int signal)
 {
-	/*char *prompt = {"\nYour lock with ussssss\n"};*/
 	(void) signal;
-	char cwd[1024];
-	getcwd(cwd, sizeof(cwd));
-	printf("\n%s\t$ ", cwd);
+	printf("\n\t($)");
 	fflush(stdout);
-	/*write(STDOUT_FILENO, prompt, strlen(prompt));
-	exit (0);*/
 }
 
+/**
+ * main - main function shell
+ * @ac: argc
+ * @av: argv
+ * @ev: environment
+ *
+ * Return: 0
+ */
 int main(int ac, char *av[], char *ev[])
 {
 	char *buffer = NULL, *token;
 	char *args;
-	size_t str = 0, len = 0, inputchar;
+	size_t str = 0, len = 1024, inputchar;
 	(void) ac;
 	(void) av;
 
-	signal(SIGINT, handle_signal);
+	signal(SIGINT, handle_signal);/*handle ctrl+C doest quit*/
 	while (1)
 	{
-		if (isatty(0) == 1)
+		if (isatty(0) == 1) /*$ apparence for every line*/
 		{
 			char cwd[1024];
-
-			getcwd(cwd, sizeof(cwd));
-			printf("%s\t$ ", cwd);
+			printf("\t($) ");
 			args = strtok(cwd, " ");
-			/*exec_cmd(args, ev);*/
 		}
-		inputchar = getline(&buffer, &len, stdin);
-		if (inputchar == (size_t) EOF)
+		inputchar = getline(&buffer, &len, stdin); /*getline*/
+		if (inputchar == (size_t) EOF) /*handle ctrl+D - exit*/
 		{
 			if (buffer)
 			{
 				free(buffer);
 				buffer = NULL;
 			}
-			printf("\nsee you soon2\n");
 			exit(0);
 		}
-		if (strcmp(buffer, "\n") == 0)
+		if (strcmp(buffer, "\n") == 0) /*handle \n - backline*/
 		{
 			free(buffer);
 			buffer = NULL;
@@ -59,19 +59,20 @@ int main(int ac, char *av[], char *ev[])
 		token = strtok(buffer, " \t\n");
 		if (!token)
 			break;
-		if (strcmp(token, "exit") == 0)
+		if (strcmp(token, "exit") == 0) /*handle exit and leave*/
 		{
 			free(buffer);
-			printf("see you soon \n");
-			return (str);
+			return (str);/*break;*/
 		}
-		if (strcmp(token, "env") == 0)
+		if (strcmp(token, "env") == 0) /*handle env and print env before leave*/
 		{
-			for (int i = 0; ev[i]; i++)
+			int i;
+			for (i = 0; ev[i]; i++)
 				printf("%s\n", ev[i]);
-			return (str);
+			return (str);/*break;*/
 		}
-		/*not sure if it works */
+		/*args = get_cmd(buffer);
+		exec_cmd(args, ev);*/
 		for (str = 0; str < 1024 && token != NULL; str++)
 		{
 			args[str] = *token;

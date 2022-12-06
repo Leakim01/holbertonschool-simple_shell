@@ -12,6 +12,6 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 int main(int ac, char *av[], char *ev[]);
-
+/*int exec_cmd (char *av[], char *ev[]);*/
 #endif
 
