@@ -24,8 +24,6 @@ int exec_cmd (char *av[], char *ev[])
 	strcat(cmd, av[0]);
 	av[0] = strdup(cmd);
 
-	free(cmd);
-
 	pid = fork();
 	switch (pid)
 	{

@@ -12,6 +12,9 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 int main(int ac, char *av[], char *ev[]);
+void handle_signal(int signal);
+int exec_cmd (char *av[], char *ev[]);
+char **get_cmd (char *str);
 
 #endif
 
