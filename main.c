@@ -1,17 +1,14 @@
 #include "main.h"
-#include <signal.h>
-
 /**
  * handle_signal - Crtl+C doesnt leave
  * @signal: int
  *
  * Return: While.
  */
-
 void handle_signal(int signal)
 {
 	(void) signal;
-	printf("\n\t($)");
+	printf("\n($)");
 	fflush(stdout);
 }
 
@@ -23,69 +20,60 @@ void handle_signal(int signal)
  *
  * Return: 0
  */
+
 int main(int ac, char *av[], char *ev[])
 {
-	char *buffer = NULL, *token;
-	char *args;
+	char *buffer;
+	char **args;
 	size_t str = 0, len = 1024, inputchar;
+	int i = 0, j = 0;
+
 	(void) ac;
 	(void) av;
+	(void) str;
+
+	buffer = malloc(1024 * sizeof(char));
+	if (!buffer)
+		return (-1);
 
 	signal(SIGINT, handle_signal);/*handle ctrl+C doest quit*/
 	while (1)
 	{
-		if (isatty(0) == 1) /*$ apparence for every line*/
+		printf("($)");
+		if (isatty(0) == 1)
 		{
 			char cwd[1024];
-			printf("\t($) ");
-			args = strtok(cwd, " ");
+			getcwd(cwd, sizeof(cwd));
 		}
-		inputchar = getline(&buffer, &len, stdin); /*getline*/
-		if (inputchar == (size_t) EOF) /*handle ctrl+D - exit*/
-		{
-			if (buffer)
-			{
-				free(buffer);
-				buffer = NULL;
-			}
-			exit(0);
-		}
+
+		inputchar = getline(&buffer, &len, stdin); 
+		if (inputchar == (size_t) EOF)
+			break;
+
+		args = get_cmd(buffer);
+		if (!args)
+			break;
 		if (strcmp(buffer, "\n") == 0) /*handle \n - backline*/
 		{
 			free(buffer);
 			buffer = NULL;
 			continue;
 		}
-		token = strtok(buffer, " \t\n");
-		if (!token)
+
+		if (strcmp(args[0], "exit") == 0) /*handle exit and leave*/
 			break;
-		if (strcmp(token, "exit") == 0) /*handle exit and leave*/
+		if (strcmp(args[0], "env") == 0) /*handle env and print env before leave*/
 		{
-			free(buffer);
-			return (str);/*break;*/
+			for (j = 0; ev[j]; j++)
+				printf("%s\n",ev[j]);
+			break;
 		}
-		if (strcmp(token, "env") == 0) /*handle env and print env before leave*/
-		{
-			int i;
-			for (i = 0; ev[i]; i++)
-				printf("%s\n", ev[i]);
-			return (str);/*break;*/
-		}
-		/*args = get_cmd(buffer);
-		exec_cmd(args, ev);*/
-		for (str = 0; str < 1024 && token != NULL; str++)
-		{
-			args[str] = *token;
-			token = strtok(NULL, "\t\n\r");
-		}
-		/*args[str] == NULL;
-		if (!args[0])
-		{
-			free(args[0]);
-			free(buffer);
-			return (0);
-		}*/
+		args = get_cmd(buffer);
+		exec_cmd(args, ev);
 	}
 	free(buffer);
+	for (; i <= 1024; i++)
+		free(args[i]);
+	free(args);
 	return (0);
 }
