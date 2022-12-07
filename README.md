@@ -21,7 +21,7 @@ You need to type "`man ./man_1_simple_shell`" command to know how to use our Sim
 ## :pencil: COMMAND LINE - CL :
 
 | CL           | Descriptions                                                                |
-| ----------------- | ------------------------------------------------------------------ |
+| ------------------------- | ------------------------------------------------------------------ |
 | `CTRL+D / exit`  | Keyboard shortcut to exit the Simple Shell.
 | `man` | Type "`man`" in this Simple Shell to have the entire description of how to use it.
 | `help` | Type "`help`" to know how to know 0:) Or type your request on Google.
