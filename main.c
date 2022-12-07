@@ -24,15 +24,14 @@ void handle_signal(int signal)
 int main(int ac, char *av[], char *ev[])
 {
 	char *buffer;
-	char **args;
-	size_t str = 0, len = 1024, inputchar;
-	int i = 0, j = 0;
+	size_t len = 1024, inputchar;
+	int error;
 
 	(void) ac;
 	(void) av;
-	(void) str;
+	(void) ev;
 
-	buffer = malloc(1024 * sizeof(char));
+	buffer = malloc(len * sizeof(char));
 	if (!buffer)
 		return (-1);
 
@@ -45,35 +44,24 @@ int main(int ac, char *av[], char *ev[])
 			char cwd[1024];
 			getcwd(cwd, sizeof(cwd));
 		}
-
-		inputchar = getline(&buffer, &len, stdin); 
+		inputchar = getline(&buffer, &len, stdin);
 		if (inputchar == (size_t) EOF)
-			break;
-
-		args = get_cmd(buffer);
-		if (!args)
-			break;
-		if (strcmp(buffer, "\n") == 0) /*handle \n - backline*/
 		{
-			free(buffer);
-			buffer = NULL;
-			continue;
-		}
-
-		if (strcmp(args[0], "exit") == 0) /*handle exit and leave*/
-			break;
-		if (strcmp(args[0], "env") == 0) /*handle env and print env before leave*/
-		{
-			for (j = 0; ev[j]; j++)
-				printf("%s\n",ev[j]);
+			printf("\n");
 			break;
 		}
-		args = get_cmd(buffer);
-		exec_cmd(args, ev);
+		error = get_cmd(buffer, len, ev);
+		/*  ERROR GET CMD
+		 * -4 EXECUTION ERROR
+		 * -3 NO CMD
+		 * -2 MALLOC ERROR
+		 * -1 EXIT
+		 * 0 SUCCESS
+		 * 1 ENV CMD
+		 */
+		printf("ERROR : %d\n", error);
 	}
+
 	free(buffer);
-	for (; i <= 1024; i++)
-		free(args[i]);
-	free(args);
 	return (0);
 }

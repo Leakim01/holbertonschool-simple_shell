@@ -1,40 +1,45 @@
-#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/file.h>
+#include <sys/stat.h>
+#include <sys/wait.h>
 
 int exec_cmd (char *av[], char *ev[])
 {
 	const char *path = "/bin/";
 	char *cmd;
 	pid_t pid;
-	int error = 0;
 
 	if (!av[0])
-		return (-3);
+		return (1);
 
 	cmd = malloc(sizeof(char) * 1024);
 	if (!cmd)
-		return (-2);
+		return (1);
 
 	strcpy(cmd, path);
 	strcat(cmd, av[0]);
 	av[0] = strdup(cmd);
-	free(cmd);
 
 	pid = fork();
 	switch (pid)
 	{
 		case -1:
-			error = 4;
+			printf("Fork Error\n");
 			break;
 		case 0:
 			if (execve(av[0], av, ev) == -1)
 				printf("Execut Error\n");
 			break;
 		case 1:
-			error = 0;
+			printf("END\n");
 			break;
 	}
 	pid = wait(NULL);
-	free(av[0]);
+	free(cmd);
 
-	return (error);
+	return (0);
 }
