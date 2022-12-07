@@ -34,7 +34,13 @@ You need to type "`man ./man_1_simple_shell`" command to know how to use our Sim
 | AUTHORS | Contains the list of the Simple Shell's creators and their e-mail |
 | README.md | Contains all the informations of the Simple Shell project |
 | main.h | Contains the libraries and the prototypes of our functions to work the Simple Shell |
-| exec_cmd.c | Contains the function exec |
+| main.c | Contains... |
+| function.c | Contains... |
+| exec_cmd.c | Contains... |
+| shell | Contains... |
+| hsh | Contains... |
+| test | Contains... |
+| check_simple_shell.bash | Contains... |
 
 | Folders Names             | Descriptions
 | ----------------- | ------------------------------------------------------------------ |

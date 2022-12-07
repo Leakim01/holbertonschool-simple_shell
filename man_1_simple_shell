@@ -1,70 +1,104 @@
-.TH man_1_simple_shell
+.\Man page for Simple Shell project
+.Th man 3 "december 2022" "3.0" "Simple Shell Manual project"
+.Dd 12/2022              \" DATE
+.Dt Simple Shell         \" Program name and manual section number
+.Os Test
+.Sh NAME:               \" Section Header - required - don't modify
+.Nm Simple-Shell,
+.Pp Write a simple UNIX command interpreter.
 
-.SH NAME
-
-.B Simple Shell - Simple Form of the real Shell
-
-.SH SYNOPSIS
-
-.B #include "main.h"
-
-.B int main(int ac, char *av[], char *ev[];
-
-.B Simple Shell
-bash [options] [file]
-
-.SH DESCRIPTION
-
-.B Simple Shell
+.Sh SYNOPSIS:             \" Section Header - required - don't modify
+.Pp
+Shell launching process:
+.Bl -tag -width -indent
+.It 1) Compile the directory programs
+gcc *c -o [NameofyourChoice]
+.It 2) Launch the program
+ ./[NameofyourChoice]
+.El
+.Sh DESCRIPTION:          \" Section Header - required - don't modify
+.Pp
+.Nm
 is a mirroring of the real Shell (bash). It an interpreter that executes commands read from the standard input or from a file.
+All shell programms can be minoring, the langage program for the
+.Nm
+who have been us is the
+.Ar C .
+.Pp
 
-.SH OPTIONS
+.Sh OPTIONS:
+.Pp
+List of some
+.Ar items
+with some descriptions:
+.Pp                      \" Inserts a space
 
-.TP
-.BR ls
-Used to display all the files names in the current path.
+.Bl -tag -width -indent  \" Begins a tagged list
+.It Ctrl+C:               \" Each item preceded by .It macro
+Will return back line
+.It Ctrl+D:
+Will leave the program
+.It exit:
+Will leave the program
+.El                      \" Ends the list
+.Pp
 
-.TP
-.BR pwd
-Used to know in which current path you are.
+\"
+.Sh FILES:
+.Pp
+.Bl -tag -width -indent
+.It Fl AUTORS
+autors description
+.It Fl check_simple_shell
+script in bash for check the shell program
+.It Fl exec_cmd
+Program in C for execute the cmd
+.It Fl get_cmd
+Program in C for get the cmd
+.It Fl main.c
+Main program in C
+.It Fl main.h
+Project library with all prototypes and all libraries necessary for the good work of the program.
+.It Fl README.MD
+project Readme
+.It Fl tostartcodingownshell
+directory with all exercice requested for start the shell project
+.Op ./tostartcodingownshell
+.It Fl flowcharts
+directory with all flowcharts projects
+.Op ./flocharts
+.El
+\" Ends the list
 
-.TP
-.BR cd
-Used to change the current directory.
-
-.TP
-.BR Ctrl + D
-Used to exit the current programm
-
-
-.SH EXAMPLES
-
-.TP
-.B "ls -l" -->
-
+\" all Importation program
+.Sh IMPORTATION:
+.Pp
+\" all links in main.h file.
+.Op stdio.h
+.Op stdlib.h
+.Op ctype.h
+.Op unistd.h
+.Op string.h
+.Pp
+.Op sys/file.h
+.Op sys/types.h
+.Op sys/wait.h
+.Op sys/stat.h
+.Op fcntl.h
+.Pp
+.Sh EXAMPLES:
 .PP
--rw-r--r-- 1 root root   433 Nov 21 05:16 0-main.c
-.PP
--rw-r--r-- 1 root root   488 Nov 21 07:51 0-read_textfile.c
-.PP
--rw-r--r-- 1 root root   463 Nov 22 01:45 1-create_file.c
-.PP
--rw-r--r-- 1 root root   345 Nov 21 07:55 1-main.c
-.PP
--rw-r--r-- 1 root root   463 Nov 22 02:17 2-append_text_to_file.c
-.PP
--rw-r--r-- 1 root root   353 Nov 22 01:49 2-main.c
-
-.SH BUGS
-
-Any bugs ? Not our fault. Ask to Taieb u.ù
-
-.SH AUTHORS
-
+ ./[NameofyourProgram]
+ $ echo cat
+ $ cat
+.Pp
+.Sh BUG:
+If you repport any bug, blame Taieb.
+You can contact us if needed on the autors system
+.Sh AUTHOR:
+.Pp
 Vanessa TESSIER - Redginald GODEAU - Mickael MANGIN
+.Sh COPYRIGHT:
+.Xr Copyright :copyright: 2022 Holberton Shool TLSE - Cohort #19
 
-Holberton School TLSE - Cohort 19
 
-.SH COPYRIGHT
-
-Copyright © 2022 Holberton Shool TLSE - Cohort 19. - Dec. 2022.
