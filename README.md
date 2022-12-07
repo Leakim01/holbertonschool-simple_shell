@@ -66,8 +66,3 @@ You need to type "`man ./man_1_simple_shell`" command to know how to use our Sim
 Holberton School - TOULOUSE
 C19 Cohort
 Dec. 2022
-
--- À CHANGER / RAJOUTER --
-
-Lien du Flowchart
-File Names
