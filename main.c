@@ -52,6 +52,11 @@ int main(int ac, char *av[], char *ev[])
 			exit(0);
 		}
 		args = get_cmd(buffer);
+		if (strcmp(args[0], "help")==0)
+		{
+			printf("Need help ? Ask to your peers, idiot !\n");
+			continue;
+		}
 		if (!args)
 			break;
 		if (strcmp(buffer, "\n") == 0) /*handle \n - backline*/

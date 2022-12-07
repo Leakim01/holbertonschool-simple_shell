@@ -1,0 +1,104 @@
+.\Man page for Simple Shell project
+.Th man 3 "december 2022" "3.0" "Simple Shell Manual project"
+.Dd 12/2022              \" DATE
+.Dt Simple Shell         \" Program name and manual section number
+.Os Test
+.Sh NAME:               \" Section Header - required - don't modify
+.Nm Simple-Shell,
+.Pp Write a simple UNIX command interpreter.
+
+.Sh SYNOPSIS:             \" Section Header - required - don't modify
+.Pp
+Shell launching process:
+.Bl -tag -width -indent
+.It 1) Compile the directory programs
+gcc *c -o [NameofyourChoice]
+.It 2) Launch the program
+ ./[NameofyourChoice]
+.El
+.Sh DESCRIPTION:          \" Section Header - required - don't modify
+.Pp
+.Nm
+is a mirroring of the real Shell (bash). It an interpreter that executes commands read from the standard input or from a file.
+All shell programms can be minoring, the langage program for the
+.Nm
+who have been us is the
+.Ar C .
+.Pp
+
+.Sh OPTIONS:
+.Pp
+List of some
+.Ar items
+with some descriptions:
+.Pp                      \" Inserts a space
+
+.Bl -tag -width -indent  \" Begins a tagged list
+.It Ctrl+C:               \" Each item preceded by .It macro
+Will return back line
+.It Ctrl+D:
+Will leave the program
+.It exit:
+Will leave the program
+.El                      \" Ends the list
+.Pp
+
+\"
+.Sh FILES:
+.Pp
+.Bl -tag -width -indent
+.It Fl AUTORS
+autors description
+.It Fl check_simple_shell
+script in bash for check the shell program
+.It Fl exec_cmd
+Program in C for execute the cmd
+.It Fl get_cmd
+Program in C for get the cmd
+.It Fl main.c
+Main program in C
+.It Fl main.h
+Project library with all prototypes and all libraries necessary for the good work of the program.
+.It Fl README.MD
+project Readme
+.It Fl tostartcodingownshell
+directory with all exercice requested for start the shell project
+.Op ./tostartcodingownshell
+.It Fl flowcharts
+directory with all flowcharts projects
+.Op ./flocharts
+.El
+\" Ends the list
+
+\" all Importation program
+.Sh IMPORTATION:
+.Pp
+\" all links in main.h file.
+.Op stdio.h
+.Op stdlib.h
+.Op ctype.h
+.Op unistd.h
+.Op string.h
+.Pp
+.Op sys/file.h
+.Op sys/types.h
+.Op sys/wait.h
+.Op sys/stat.h
+.Op fcntl.h
+.Pp
+.Sh EXAMPLES:
+.PP
+ ./[NameofyourProgram]
+ $ echo cat
+ $ cat
+.Pp
+.Sh BUG:
+If you repport any bug, blame Taieb.
+You can contact us if needed on the autors system
+.Sh AUTHOR:
+.Pp
+Vanessa TESSIER - Redginald GODEAU - Mickael MANGIN
+.Sh COPYRIGHT:
+.Xr Copyright :copyright: 2022 Holberton Shool TLSE - Cohort #19
+
+
