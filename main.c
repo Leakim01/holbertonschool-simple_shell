@@ -26,7 +26,7 @@ int main(int ac, char *av[], char *ev[])
 {
 	char *buffer;
 	size_t len = 1024, inputchar;
-	int error;
+
 
 	(void) ac;
 	(void) av;
@@ -52,9 +52,9 @@ int main(int ac, char *av[], char *ev[])
 			printf("\n");
 			break;
 		}
-		error = get_cmd(buffer, len, ev);
+		get_cmd(buffer, len, ev);
 		/*4EXECER|3NOCMD|2MALLOCER|-1EXIT|0SCCESS|1ENVCMD*/
-		printf("ERROR : %d\n", error);
+		/*printf("ERROR : %d\n", error);*/
 	}
 	free(buffer);
 	return (0);
