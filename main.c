@@ -8,7 +8,7 @@
 void handle_signal(int signal)
 {
 	(void) signal;
-	printf("\n#cisfun$ ");
+/*	printf("\n#cisfun$ ");*/
 	fflush(stdout);
 }
 
@@ -49,7 +49,7 @@ int main(int ac, char *av[], char *ev[])
 		inputchar = getline(&buffer, &len, stdin);
 		if (inputchar == (size_t) EOF)
 		{
-			printf("\n");
+			/*printf("\n");*/
 			break;
 		}
 		get_cmd(buffer, len, ev);
