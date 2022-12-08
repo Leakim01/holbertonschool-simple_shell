@@ -1,5 +1,10 @@
-# C - SIMPLE SHELL PROJECT :
-Holberton School Toulouse | C19
+<br>
+<p align="center">
+  <img src="https://zupimages.net/up/22/49/4ouj.png" />
+</p>
+<br>
+
+# C - SIMPLE SHELL PROJECT
 
 ## :pencil: DESCRIPTION :
 The Simple Shell mirroring the real Shell in a simple version of himself.
@@ -46,6 +51,23 @@ You need to type "`man ./man_1_simple_shell`" command to know how to use our Sim
 | Flowcharts | Contains the diagram explaining the order of operation of our Simple Shell  |
 | ToStartCodingOwnShell | Contains all the exercices files to understand how to create the Simple Shell
 
+## :keyboard: EXAMPLE OF USING A COMMAND :
+
+If you use the `ls` command with `-l` option, your output will be :
+```
+total 40
+-rw-r--r-- 1 root root  136 Dec  7 05:27 AUTHORS
+-rwxr-xr-x 1 root root 1489 Dec  7 05:27 check_simple_shell.bash
+-rw-r--r-- 1 root root  672 Dec  8 00:57 exec_cmd.c
+drwxr-xr-x 2 root root 4096 Dec  7 05:27 flowcharts
+-rw-r--r-- 1 root root  566 Dec  8 00:57 get_cmd.c
+-rw-r--r-- 1 root root 1445 Dec  8 00:57 main.c
+-rw-r--r-- 1 root root  387 Dec  8 00:57 main.h
+-rwxr-xr-x 1 root root 2410 Dec  8 00:57 man_1_simple_shell
+-rw-r--r-- 1 root root 3440 Dec  8 00:59 README.md
+drwxr-xr-x 2 root root 4096 Dec  7 05:27 tostartcodingownshell
+```
+
 ## :spiral_calendar: ORGANISATION :
 
 - Trello 'https://trello.com/invite/b/9Knotcwi/ATTI717e4e565dd9afb3a8218f025f414c51D85571FD/shell'
@@ -55,10 +77,12 @@ You need to type "`man ./man_1_simple_shell`" command to know how to use our Sim
 :small_orange_diamond: Vanessa TESSIER
 <br>
 [![linkedin](https://img.shields.io/badge/linkedin-white?style=for-the-badge&logo=linkedin&logoColor=black)](https://www.linkedin.com/in/vanessa-tessier-601794252/)
+<br>
 
 :small_orange_diamond: Redginald GODEAU
 <br>
 [![linkedin](https://img.shields.io/badge/linkedin-white?style=for-the-badge&logo=linkedin&logoColor=black)](https://www.linkedin.com/in/redginald-godeau-04ab8a254/)
+<br>
 
 :small_orange_diamond: Mickael MANGIN
 <br>
