@@ -10,7 +10,7 @@
 The Simple Shell mirroring the real Shell in a simple version of himself.
 The Shell is a program that takes commands from the keyboard and gives them to the operating system to perform.
 
-## :pencil: PROTOTYPE :
+## :pencil: PROTOTYPES :
 `int main(int ac, char *av[], char *ev[]);`
 `int exec_cmd (char *av[], char *ev[]);`
 
