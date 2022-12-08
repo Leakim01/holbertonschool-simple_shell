@@ -6,34 +6,35 @@
 
 # C - SIMPLE SHELL PROJECT
 
-## :pencil: DESCRIPTION :
+## :pencil: SIMPLE SHELL DESCRIPTION :
 The Simple Shell mirroring the real Shell in a simple version of himself.
-The shell is a program that takes commands from the keyboard and gives them to the operating system to perform.
+The Shell is a program that takes commands from the keyboard and gives them to the operating system to perform.
 
-## :pencil: PROTOTYPE :
+## :pencil: PROTOTYPES :
 `int main(int ac, char *av[], char *ev[]);`
 `int exec_cmd (char *av[], char *ev[]);`
 
 ## :pencil: COMPILATION :
-You need to type "`gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o NameOfTheScriptFile`" to compile your code to an executablbe file.
+You need to type `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o NameOfTheScriptFile` to compile your code to an executable file.
 
 ## :pencil: EXECUTION :
-You need to type "`./NameOfTheScriptFIle`" to execute your file.
+You need to type `./NameOfTheScriptFile` to execute your file.
 
 ## :pencil: MAN PAGE:
-You need to type "`man ./man_1_simple_shell`" command to know how to use our Simple Shell
+You need to type `man ./man_1_simple_shell` command to know how to use our Simple Shell
 
 ## :pencil: COMMAND LINE - CL :
 
 | CL           | Descriptions                                                                |
 | ------------------------- | ------------------------------------------------------------------ |
-| `CTRL+D / exit`  | Keyboard shortcut to exit the Simple Shell.
-| `man` | Type "`man`" in this Simple Shell to have the entire description of how to use it.
-| `help` | Type "`help`" to know how to know 0:) Or type your request on Google.
-| `ls` | This command display the names of the files in the current path. You can use the OPTION "`-l`" to display the list of all the informations about this files.
+| `CTRL+D`  | Keyboard shortcut to exit the Simple Shell.
+| `exit` | Type `exit` command to exit the Simple Shell
+| `man` | Type `man` command in this Simple Shell to have the entire description of how to use it.
+| `help` | Type `help` to know how to know 0:) Or type your request on Google.
+| `ls` | This command display the names of the files in the current path. You can use the OPTION `-l` to display the list of all the informations about this files.
 | `env` | Displays the current environment before leaving
 
-## :pencil: FILES & FOLDERS DESCRIPTIONS :
+## :pencil: FILES & DIRECTORIES DESCRIPTIONS :
 
 | Files Names             | Descriptions                                                                |
 | ----------------- | ------------------------------------------------------------------ |
@@ -53,8 +54,9 @@ You need to type "`man ./man_1_simple_shell`" command to know how to use our Sim
 
 ## :keyboard: EXAMPLE OF USING A COMMAND :
 
-If you use the `ls` command with `-l` option, your output will be :
+If you use the `ls` command with `-l` option :
 ```
+$ ls -l
 total 40
 -rw-r--r-- 1 root root  136 Dec  7 05:27 AUTHORS
 -rwxr-xr-x 1 root root 1489 Dec  7 05:27 check_simple_shell.bash
@@ -68,25 +70,20 @@ drwxr-xr-x 2 root root 4096 Dec  7 05:27 flowcharts
 drwxr-xr-x 2 root root 4096 Dec  7 05:27 tostartcodingownshell
 ```
 
-## :spiral_calendar: ORGANISATION :
+## :spiral_calendar: ORGANISATION TOOLS :
 
-- Trello 'https://trello.com/invite/b/9Knotcwi/ATTI717e4e565dd9afb3a8218f025f414c51D85571FD/shell'
-- Diagrams Directory Flowchart
+| Tools             | Tools Links                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| Trello | <a href="https://trello.com/b/9Knotcwi/shell"><img src="https://www.zupimages.net/up/22/49/0l1k.jpg"></a> |
+| Flowchart | <a href="https://trello.com/b/9Knotcwi/shell"><img src=https://www.zupimages.net/up/22/49/59rh.jpg></a> |
 
-### :writing_hand: AUTHORS : 
-:small_orange_diamond: Vanessa TESSIER
-<br>
-[![linkedin](https://img.shields.io/badge/linkedin-white?style=for-the-badge&logo=linkedin&logoColor=black)](https://www.linkedin.com/in/vanessa-tessier-601794252/)
-<br>
+### :writing_hand: AUTHORS :
 
-:small_orange_diamond: Redginald GODEAU
-<br>
-[![linkedin](https://img.shields.io/badge/linkedin-white?style=for-the-badge&logo=linkedin&logoColor=black)](https://www.linkedin.com/in/redginald-godeau-04ab8a254/)
-<br>
-
-:small_orange_diamond: Mickael MANGIN
-<br>
-[![linkedin](https://img.shields.io/badge/linkedin-white?style=for-the-badge&logo=linkedin&logoColor=black)](https://www.linkedin.com/in/micka%C3%ABl-mangin-331aa2170/)
+| Authors Names             | Linkedin Links                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| 🤷‍♀️ Vanessa TESSIER | [![linkedin](https://img.shields.io/badge/linkedin-white?style=for-the-badge&logo=linkedin&logoColor=black)](https://www.linkedin.com/in/vanessa-tessier-601794252/) |
+| 👦 Redginald GODEAU | [![linkedin](https://img.shields.io/badge/linkedin-white?style=for-the-badge&logo=linkedin&logoColor=black)](https://www.linkedin.com/in/redginald-godeau-04ab8a254/) |
+| 👨 Mickaël MANGIN | [![linkedin](https://img.shields.io/badge/linkedin-white?style=for-the-badge&logo=linkedin&logoColor=black)](https://www.linkedin.com/in/micka%C3%ABl-mangin-331aa2170/) |
 
 ### :mortar_board: SCHOOL :
 
