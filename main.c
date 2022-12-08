@@ -35,7 +35,7 @@ int main(int ac, char *av[], char *ev[])
 	if (!buffer)
 		return (-1);
 
-	signal(SIGINT, handle_signal);/*handle ctrl+C doest quit*/
+	signal(SIGINT, handle_signal);/*handle ctrl+C doesnt quit*/
 	while (1)
 	{
 		printf("($)");
