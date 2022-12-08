@@ -12,6 +12,7 @@ void handle_signal(int signal)
 	fflush(stdout);
 }
 
+
 /**
  * main - main function shell
  * @ac: argc
@@ -25,7 +26,7 @@ int main(int ac, char *av[], char *ev[])
 {
 	char *buffer;
 	size_t len = 1024, inputchar;
-	/*int error;*/
+	int error;
 
 	(void) ac;
 	(void) av;
@@ -51,9 +52,9 @@ int main(int ac, char *av[], char *ev[])
 			printf("\n");
 			break;
 		}
-		get_cmd(buffer, len, ev);
-		/**  ERROR GET CMD | -4 EXECUTION ERROR | -3 NO CMD | -2 MALLOC ERROR | -1 EXIT | 0 SUCCESS | 1 ENV CMD */
-		/*printf("\n", error);*/
+		error = get_cmd(buffer, len, ev);
+		/*4EXECER|3NOCMD|2MALLOCER|-1EXIT|0SCCESS|1ENVCMD*/
+		printf("ERROR : %d\n", error);
 	}
 	free(buffer);
 	return (0);
