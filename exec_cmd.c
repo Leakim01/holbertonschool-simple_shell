@@ -22,6 +22,7 @@ int exec_cmd(char *av[], char *ev[])
 		case 0:
 			if (execve(av[0], av, ev) == -1)
 				printf("Execut Error\n");
+			exit(1);
 			break;
 		case 1:
 			error = 0;

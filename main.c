@@ -26,7 +26,7 @@ int main(int ac, char *av[], char *ev[])
 {
 	char *buffer;
 	size_t len = 1024, inputchar;
-
+	int error = 0;
 
 	(void) ac;
 	(void) av;
@@ -39,20 +39,18 @@ int main(int ac, char *av[], char *ev[])
 	signal(SIGINT, handle_signal);/*handle ctrl+C doesnt quit*/
 	while (1)
 	{
-		/*printf("#cisfun$ ");*/
-		if (isatty(0) == 1)
-		{
-			char cwd[1024];
-
-			getcwd(cwd, sizeof(cwd));
-		}
 		inputchar = getline(&buffer, &len, stdin);
+		fflush(stdin);
+
 		if (inputchar == (size_t) EOF)
-		{
-			/*printf("\n");*/
 			break;
+		
+		error = get_cmd(buffer, len, ev);
+		if (error == -1)
+		{
+			free(buffer);
+			exit(2);
 		}
-		get_cmd(buffer, len, ev);
 		/*4EXECER|3NOCMD|2MALLOCER|-1EXIT|0SCCESS|1ENVCMD*/
 		/*printf("ERROR : %d\n", error);*/
 	}
