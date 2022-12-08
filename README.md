@@ -18,7 +18,7 @@ The Shell is a program that takes commands from the keyboard and gives them to t
 You need to type `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o NameOfTheScriptFile` to compile your code to an executable file.
 
 ## :pencil: EXECUTION :
-You need to type `./NameOfTheScriptFIle` to execute your file.
+You need to type `./NameOfTheScriptFile` to execute your file.
 
 ## :pencil: MAN PAGE:
 You need to type `man ./man_1_simple_shell` command to know how to use our Simple Shell
