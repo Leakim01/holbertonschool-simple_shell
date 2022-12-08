@@ -8,11 +8,25 @@
  */
 int exec_cmd(char *av[], char *ev[])
 {
+	const char *path = "/bin/";
+	char *cmd;
 	pid_t pid;
 	int error = 0;
+	int have_path = !strstr(av[0], "./") && !strstr(av[0], "/bin/");
 
 	if (!av[0])
 		return (-3);
+
+
+	printf("%d", have_path);
+	if (have_path)
+	{
+			cmd = strdup(path);
+			strcat(cmd, av[0]);
+			av[0] = strdup(cmd);
+			free(cmd);
+	}
+
 	pid = fork();
 	switch (pid)
 	{
@@ -29,5 +43,8 @@ int exec_cmd(char *av[], char *ev[])
 			break;
 	}
 	pid = wait(NULL);
+	if (have_path)
+		free(av[0]);
+
 	return (error);
 }
