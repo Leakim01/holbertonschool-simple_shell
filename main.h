@@ -14,8 +14,8 @@
 /*Prototypes*/
 int main(int ac, char *av[], char *ev[]);
 void handle_signal(int signal);
-int exec_cmd (char *av[], char *ev[]);
-int get_cmd (char *str, size_t size, char *ev[]);
+int exec_cmd(char *av[], char *ev[]);
+int get_cmd(char *str, size_t size, char *ev[]);
 
 #endif
 

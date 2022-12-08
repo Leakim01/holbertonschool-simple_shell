@@ -4,6 +4,7 @@
  * @av: array of string pointers containing command line arguments
  * @ev: environment
  *
+ * Return: 0
  */
 int exec_cmd(char *av[], char *ev[])
 {
