@@ -1,6 +1,11 @@
 #include "main.h"
-
-int exec_cmd (char *av[], char *ev[])
+/**
+ * exec_cmd - excute cmd
+ * @av: array of string pointers containing command line arguments
+ * @ev: environment
+ *
+ */
+int exec_cmd(char *av[], char *ev[])
 {
 	const char *path = "/bin/";
 	char *cmd;
@@ -35,6 +40,5 @@ int exec_cmd (char *av[], char *ev[])
 	}
 	pid = wait(NULL);
 	free(av[0]);
-
 	return (error);
 }

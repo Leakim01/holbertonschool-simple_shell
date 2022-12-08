@@ -8,7 +8,7 @@
 void handle_signal(int signal)
 {
 	(void) signal;
-	printf("\n($)");
+	printf("\n#cisfun$ ");
 	fflush(stdout);
 }
 
@@ -38,7 +38,7 @@ int main(int ac, char *av[], char *ev[])
 	signal(SIGINT, handle_signal);/*handle ctrl+C doesnt quit*/
 	while (1)
 	{
-		printf("($)");
+		printf("#cisfun$ ");
 		if (isatty(0) == 1)
 		{
 			char cwd[1024];
@@ -61,7 +61,6 @@ int main(int ac, char *av[], char *ev[])
 		 */
 		printf("ERROR : %d\n", error);
 	}
-
 	free(buffer);
 	return (0);
 }
