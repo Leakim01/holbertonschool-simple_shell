@@ -74,8 +74,8 @@ drwxr-xr-x 2 root root 4096 Dec  7 05:27 tostartcodingownshell
 
 | Tools             | Tools Links                                                                |
 | ----------------- | ------------------------------------------------------------------ |
-| Trello | <a href="https://trello.com/b/9Knotcwi/shell"><img src="https://www.zupimages.net/up/22/49/0l1k.jpg"></a> |
-| Flowchart | <a href="https://trello.com/b/9Knotcwi/shell"><img src=https://www.zupimages.net/up/22/49/59rh.jpg></a> |
+| Trello | [![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white)](https://trello.com/b/9Knotcwi/shell) |
+| Flowchart | [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Leakim01/holbertonschool-simple_shell/tree/main/flowcharts) |
 
 ### :writing_hand: AUTHORS :
 
