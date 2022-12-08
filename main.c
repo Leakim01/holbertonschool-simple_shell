@@ -8,7 +8,7 @@
 void handle_signal(int signal)
 {
 	(void) signal;
-	printf("\n($) ");
+	printf("\n#cisfun$ ");
 	fflush(stdout);
 }
 
@@ -24,62 +24,43 @@ void handle_signal(int signal)
 int main(int ac, char *av[], char *ev[])
 {
 	char *buffer;
-	char **args;
-	size_t str = 0, len = 1024, inputchar;
-	int i = 0, j = 0;
+	size_t len = 1024, inputchar;
+	int error;
 
 	(void) ac;
 	(void) av;
-	(void) str;
+	(void) ev;
 
-	buffer = malloc(1024 * sizeof(char));
+	buffer = malloc(len * sizeof(char));
 	if (!buffer)
 		return (-1);
 
-	signal(SIGINT, handle_signal);/*handle ctrl+C doest quit*/
+	signal(SIGINT, handle_signal);/*handle ctrl+C doesnt quit*/
 	while (1)
 	{
+		printf("#cisfun$ ");
 		if (isatty(0) == 1)
 		{
 			char cwd[1024];
-			printf("($) ");
 			getcwd(cwd, sizeof(cwd));
 		}
 		inputchar = getline(&buffer, &len, stdin);
 		if (inputchar == (size_t) EOF)
 		{
 			printf("\n");
-			exit(0);
-		}
-		args = get_cmd(buffer);
-		if (strcmp(args[0], "help")==0)
-		{
-			printf("Need help ? Ask to your peers, idiot !\n");
-			continue;
-		}
-		if (!args)
-			break;
-		if (strcmp(buffer, "\n") == 0) /*handle \n - backline*/
-		{
-			free(buffer);
-			buffer = NULL;
-			continue;
-		}
-
-		if (strcmp(args[0], "exit") == 0) /*handle exit and leave*/
-			break;
-		if (strcmp(args[0], "env") == 0) /*handle env and print env before leave*/
-		{
-			for (j = 0; ev[j]; j++)
-				printf("%s\n",ev[j]);
 			break;
 		}
-		args = get_cmd(buffer);
-		exec_cmd(args, ev);
+		error = get_cmd(buffer, len, ev);
+		/*  ERROR GET CMD
+		 * -4 EXECUTION ERROR
+		 * -3 NO CMD
+		 * -2 MALLOC ERROR
+		 * -1 EXIT
+		 * 0 SUCCESS
+		 * 1 ENV CMD
+		 */
+		printf("ERROR : %d\n", error);
 	}
 	free(buffer);
-	for (; i <= 1024; i++)
-		free(args[i]);
-	free(args);
 	return (0);
 }
