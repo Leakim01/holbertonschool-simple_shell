@@ -25,7 +25,7 @@ int main(int ac, char *av[], char *ev[])
 {
 	char *buffer;
 	size_t len = 1024, inputchar;
-	int error;
+	/*int error;*/
 
 	(void) ac;
 	(void) av;
@@ -38,10 +38,11 @@ int main(int ac, char *av[], char *ev[])
 	signal(SIGINT, handle_signal);/*handle ctrl+C doesnt quit*/
 	while (1)
 	{
-		printf("#cisfun$ ");
+		/*printf("#cisfun$ ");*/
 		if (isatty(0) == 1)
 		{
 			char cwd[1024];
+
 			getcwd(cwd, sizeof(cwd));
 		}
 		inputchar = getline(&buffer, &len, stdin);
@@ -50,16 +51,9 @@ int main(int ac, char *av[], char *ev[])
 			printf("\n");
 			break;
 		}
-		error = get_cmd(buffer, len, ev);
-		/*  ERROR GET CMD
-		 * -4 EXECUTION ERROR
-		 * -3 NO CMD
-		 * -2 MALLOC ERROR
-		 * -1 EXIT
-		 * 0 SUCCESS
-		 * 1 ENV CMD
-		 */
-		printf("ERROR : %d\n", error);
+		get_cmd(buffer, len, ev);
+		/**  ERROR GET CMD | -4 EXECUTION ERROR | -3 NO CMD | -2 MALLOC ERROR | -1 EXIT | 0 SUCCESS | 1 ENV CMD */
+		/*printf("\n", error);*/
 	}
 	free(buffer);
 	return (0);
