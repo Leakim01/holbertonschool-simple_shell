@@ -11,7 +11,7 @@ int get_cmd(char *str, size_t size, char *ev[])
 {
 	char **args;
 	char *token;
-	int i = 0, j = 0, error;
+	int i = 0, error;
 
 	args = malloc(size * sizeof(char *));
 	if (!args)
