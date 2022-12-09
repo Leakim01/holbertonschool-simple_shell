@@ -14,7 +14,7 @@ int exec_cmd(char *av[], char *ev[])
 	int error = 0;
 	int have_path = !strstr(av[0], "./") && !strstr(av[0], "/bin/");
 
-	if (!av[0])		
+	if (!av[0])
 		return (-3);
 
 	if (have_path)
@@ -31,13 +31,11 @@ int exec_cmd(char *av[], char *ev[])
 			pid = wait(NULL);
 			if (have_path)
 				free(av[0]);
-			error = 4;
 			break;
 		case 0:
 			execve(av[0], av, ev);
 			if (have_path)
 				free(av[0]);
-
 			exit(2);
 			break;
 		case 1:

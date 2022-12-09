@@ -46,12 +46,7 @@ int main(int ac, char *av[], char *ev[])
 		if (inputchar == (size_t) EOF)
 			break;
 		error = get_cmd(buffer, len, ev);
-		if (error == -1)
-		{
-			free(buffer);
-			exit(0);
-		}
-		else if (error == -3)
+		if (error == -1 || error == -3)
 		{
 			free(buffer);
 			exit(0);

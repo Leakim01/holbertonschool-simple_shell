@@ -12,14 +12,11 @@ int get_cmd(char *str, size_t size, char *ev[])
 	char **args;
 	char *token;
 	int i = 0, j = 0, error;
-	(void) ev;
 
 	args = malloc(size * sizeof(char *));
 	if (!args)
 		return (-2);
-
 	token = strtok(str, " \n\t\r");
-	
 	while (token != NULL)
 	{
 		if (strlen(token) == 0)
@@ -29,28 +26,15 @@ int get_cmd(char *str, size_t size, char *ev[])
 	}
 	args[i] = NULL;
 
-	if (args[0] == NULL)
+	error = inner_cmd(args[0], ev);
+	if (error != 0)
 	{
 		free(args);
-		return (-3);
+		if (error > -3)
+			free(token);
+		return (error);
 	}
 
-	if (strcmp(args[0], "exit") == 0) /*exit*/
-	{
-		free(args);
-		free(token);
-		return (-1);
-	}
-	else if (strcmp(args[0], "help") == 0) /*help*/
-		printf("This is a help, watch the man page - man ./man_1_simple_shell");
-	else if (strcmp(args[0], "env") == 0) /*print environment*/
-	{
-		free(args);
-		free(token);
-		for (j = 0; ev[j] != NULL; j++)
-			printf("%s\n", ev[j]);
-		return (0);
-	}
 	error = exec_cmd(args, ev);
 	free(args);
 	free(token);
