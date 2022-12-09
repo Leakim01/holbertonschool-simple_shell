@@ -70,8 +70,8 @@ flowchart TD
        args3-->EOF{{"if (inputchar == (size_t) EOF)"}}
        EOF-->|false|get_cmd["error = get_cmd(buffer, len, ev)"]-->Error1{{"error == -1"}}
        dgetcmd[["check get_cmd.c flowchart"]]-.-get_cmd(Start)
-           click dgetcmd href "[https://github.com/Leakim01/holbertonschool-simple_shell/blob/main/flowcharts/get_args_c.md](https://github.com/Leakim01/holbertonschool-simple_shell/blob/main/flowcharts/get_args_c.md)" _blank
-
+     
+               click dgetcmd href "https://www.github.com" "This is a tooltip for a link"
 
        
        EOF-->|true|Break("Break")
