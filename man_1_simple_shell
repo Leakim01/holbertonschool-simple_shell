@@ -19,32 +19,69 @@ gcc *c -o [NameofyourChoice]
 .Sh DESCRIPTION:          \" Section Header - required - don't modify
 .Pp
 .Nm
-is a mirroring of the real Shell (bash). It an interpreter that executes commands read from the standard input or from a file.
-All shell programms can be minoring, the langage program for the
+is a mirroring of the real Shell (bash). It's an interpreter that executes commands read from the standard input or from a file.
+All the shell programms can be mirroring, the langage program for the
 .Nm
 who have been us is the
 .Ar C .
 .Pp
 
 .Sh OPTIONS:
+
 .Pp
 List of some
 .Ar items
 with some descriptions:
-.Pp                      \" Inserts a space
-
-.Bl -tag -width -indent  \" Begins a tagged list
-.It Ctrl+C:               \" Each item preceded by .It macro
-Will return back line
-.It Ctrl+D:
-Will leave the program
-.It exit:
-Will leave the program
-.El                      \" Ends the list
 .Pp
 
-\"
+.TP
+.RS 1.2i
+.TS
+tab(@), left, box;
+c | c
+rB | r.
+ ITEMS@DESCRIPTIONS
+_
+ Ctrl+C@Used to return back line
+_
+ Ctrl+D@Used to leave the program
+_
+exit @Used to leave the program
+.TE
+.RE
+
 .Sh FILES:
+
+.TP
+.B
+
+.RS 1.2i
+.TS
+tab(@), left, box;
+c | c
+rB | r.
+FILES NAMES@DESCRIPTIONS
+_
+-AUTHORS@List of the authors
+_
+check_simple_shell@Script in bash for check the shell program
+_
+exec_cmd@Program in C to get the cmd
+_
+main.c@Main program in C
+_
+main.h@Project library with all prototypes and all the libraries necessary for the good work of the program
+_
+README.md@Useful to each things in our project
+_
+tostartcodingownshell@Directory with all the exercice requested to start the Simple Shell Project. Execute [./tostartcodingownshell]
+_
+Flowcharts@Directory with all flowcharts projects [./flowcharts]
+_
+inner_cmd.c@Inner SimpleShell command [env][help][exit]
+.TE
+.RE
+
 .Pp
 .Bl -tag -width -indent
 .It Fl AUTORS
@@ -99,6 +136,4 @@ You can contact us if needed on the autors system
 .Pp
 Vanessa TESSIER - Redginald GODEAU - Mickael MANGIN
 .Sh COPYRIGHT:
-.Xr Copyright :copyright: 2022 Holberton Shool TLSE - Cohort #19
-
-
+.Xr Copyright © 2022 Holberton Shcool TLSE - Cohort #19
