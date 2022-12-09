@@ -61,8 +61,6 @@ int main(int ac, char *av[], char *ev[])
 			free(buffer);
 			exit(2);
 		}
-
-		printf("[%d]", error);
 		/*4EXECER|3NOCMD|2MALLOCER|-1EXIT|0SCCESS|1ENVCMD*/
 		/*printf("ERROR : %d\n", error);*/
 	}
