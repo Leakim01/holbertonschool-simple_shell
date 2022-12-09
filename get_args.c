@@ -19,12 +19,21 @@ int get_cmd(char *str, size_t size, char *ev[])
 		return (-2);
 
 	token = strtok(str, " \n\t\r");
+	
 	while (token != NULL)
 	{
+		if (strlen(token) == 0)
+			continue;
 		args[i++] = token;
 		token = strtok(NULL, " \n\t\r");
 	}
 	args[i] = NULL;
+
+	if (args[0] == NULL)
+	{
+		free(args);
+		return (-3);
+	}
 
 	if (strcmp(args[0], "exit") == 0) /*exit*/
 	{
