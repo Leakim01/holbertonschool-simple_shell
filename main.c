@@ -54,7 +54,7 @@ int main(int ac, char *av[], char *ev[])
 		else if (error == -3)
 		{
 			free(buffer);
-			exit(0);
+			exit(2);
 		}
 		/*4EXECER|3NOCMD|2MALLOCER|-1EXIT|0SCCESS|1ENVCMD*/
 		/*printf("ERROR : %d\n", error);*/
