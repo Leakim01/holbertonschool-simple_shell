@@ -34,19 +34,18 @@ int exec_cmd(char *av[], char *ev[])
 			error = 4;
 			break;
 		case 0:
-			if (execve(av[0], av, ev) == -1)
-				printf("EXECVE ERROR\n");
+			execve(av[0], av, ev);
 			if (have_path)
 				free(av[0]);
-			exit(1);
+
+			exit(2);
 			break;
 		case 1:
 			if (have_path)
 				free(av[0]);
-			error = 0;
 			break;
 	}
-	pid = wait(NULL);
+	pid = wait(&error);
 	if (have_path)
 		free(av[0]);
 

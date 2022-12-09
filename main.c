@@ -56,11 +56,13 @@ int main(int ac, char *av[], char *ev[])
 			free(buffer);
 			exit(0);
 		}
-		else if (error == 4)
+		else if (error == 512)
 		{
 			free(buffer);
 			exit(2);
 		}
+
+		printf("[%d]", error);
 		/*4EXECER|3NOCMD|2MALLOCER|-1EXIT|0SCCESS|1ENVCMD*/
 		/*printf("ERROR : %d\n", error);*/
 	}
