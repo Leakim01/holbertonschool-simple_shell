@@ -31,6 +31,7 @@ int main(int ac, char *av[], char *ev[])
 	(void) ac;
 	(void) av;
 	(void) ev;
+	(void) error;
 
 	buffer = malloc(len * sizeof(char));
 	if (!buffer)
@@ -45,12 +46,17 @@ int main(int ac, char *av[], char *ev[])
 		if (inputchar == (size_t) EOF)
 			break;
 		error = get_cmd(buffer, len, ev);
-		if (error == -1)
+		if (error == -1 || error == -3)
+		{
+			free(buffer);
+			exit(0);
+		}
+		else if (error == 512)
 		{
 			free(buffer);
 			exit(2);
 		}
-		/*-4EXECER|-3NOCMD|-2MALLOCER|-1EXIT|0SCCESS|1ENVCMD*/
+		/*4EXECER|3NOCMD|2MALLOCER|-1EXIT|0SCCESS|1ENVCMD*/
 		/*printf("ERROR : %d\n", error);*/
 	}
 	free(buffer);
