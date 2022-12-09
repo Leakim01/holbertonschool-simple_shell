@@ -49,7 +49,7 @@ int main(int ac, char *av[], char *ev[])
 		if (error == -1)
 		{
 			free(buffer);
-			exit(2);
+			exit(0);
 		}
 		else if (error == -3)
 		{
