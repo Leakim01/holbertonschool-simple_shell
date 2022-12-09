@@ -24,6 +24,8 @@ int get_cmd(char *str, size_t size, char *ev[])
 		args[i++] = token;
 		token = strtok(NULL, " \n\t\r");
 	}
+	args[i] = NULL;
+
 	if (strcmp(args[0], "exit") == 0) /*exit*/
 	{
 		free(args);

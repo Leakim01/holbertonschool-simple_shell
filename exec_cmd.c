@@ -16,7 +16,6 @@ int exec_cmd(char *av[], char *ev[])
 
 	if (!av[0])
 		return (-3);
-
 	if (have_path)
 	{
 			cmd = strdup(path);
