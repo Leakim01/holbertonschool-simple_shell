@@ -39,7 +39,7 @@ flowchart TD
       !token-->|true|strlen{{"strlen(token) == 0"}}-->|true|continue("continue")--> strcmp1[/"args[i] = NULL"/]-->inner(["error = inner_cmd(args[0], ev)"])-->| true|strcmp2{{"error != 0"}}-->| true|strcmp3{{"error > -3"}}
 inner-.->inner_cmd[["check inner_cmd.c flowchart"]]
       strlen-->|false|false[/"args[i++] = token;\ntoken = strtok(NULL,  \n\t\r)"/]-->strcmp1
-      strcmp3-->|true| free(free)
+      strcmp3-->|true| free(free) --> return2
       
       strcmp2-->|false|exec(["error = exec_cmd(args, ev)"])-->2exit[/"free(args);\nfree(token);"/]
       exec<-.-!otherchart[["check  exec_cmd.c flowcharts"]]
