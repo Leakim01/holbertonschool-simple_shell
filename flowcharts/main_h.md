@@ -1,6 +1,7 @@
 ```mermaid
 flowchart TD
       subgraph main.h
+       style main.h fill:#F9F9F9, stroke: #E8E8E8,stroke-width:2px 
        style Start fill: #FD8882,stroke: #FF6600,stroke-width:2px
        style endbox fill: #FD8882,stroke: #FF6600,stroke-width:2px
 
