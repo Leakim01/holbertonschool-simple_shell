@@ -14,10 +14,8 @@ flowchart TD
  style exec fill: #FFDE6C,stroke:#FFCB17,stroke-width:2px
  style args fill: #FFDE6C,stroke:#FFCB17,stroke-width:2px
  style stroke fill: #FFDE6C,stroke:#FFCB17,stroke-width:2px
- style Exit fill: #FD8882,stroke: #FF6600,stroke-width:2px
  style start fill: #FD8882,stroke: #FF6600,stroke-width:2px
  style exit fill:#FFB15B, stroke-width:2px, stroke:#E67800
- style return fill:#FFB15B, stroke-width:2px, stroke:#E67800
  style return2 fill:#FFB15B, stroke-width:2px, stroke:#E67800
  style continue fill:#FFB15B, stroke-width:2px, stroke:#E67800
  style inner_cmd fill:#bbf,stroke:#B366FF,stroke-width:2px,color:#fff,stroke-dasharray: 3 3
