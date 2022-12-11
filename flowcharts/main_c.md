@@ -68,17 +68,15 @@ flowchart TD
        while-->input3[/"inputchar = getline(&buffer, &len, stdin)"/]
        input3-->args3["fflush(stdin)"]
        args3-->EOF{{"if (inputchar == (size_t) EOF)"}}
-       EOF-->|false|get_cmd["error = get_cmd(buffer, len, ev)"]-->Error1{{"error == -1"}}
-       dgetcmd[["check get_cmd.c flowchart"]]-.-get_cmd(Start)
+       EOF-->|false|get_cmd["error = get_cmd(buffer, len, ev)"]-->Error1{{"error == -1 || error == -3"}}
+       dgetcmd[["check get_cmd.c flowchart"]]-.-get_cmd("error = get_cmd(buffer, len, ev)")
      
-               click dgetcmd href "https://www.github.com" "This is a tooltip for a link"
-
        
        EOF-->|true|Break("Break")
-       Error1-->|false|Error3{{"error == -3"}}
-       Error1-->|true|Free1([Free])-->1exit("Exit2")
-       Error3-->|true|Free2([Free])-->3exit("Exit0")
-       Error3-->while-->Free3([Free])-->0return("Return0")-->exit2("Exit")
+       Error1-->|false|Error3{{"error == 512"}}
+       Error1-->|true|Free1([Free])-->1exit("Exit0")
+       Error3-->|true|Free2([Free])-->3exit("Exit2")
+       Error3-->|false|while-->Free3([Free])-->0return("Return0")-->exit2("Exit")
 
        
         
