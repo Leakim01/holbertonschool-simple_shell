@@ -32,7 +32,7 @@ You need to type `man ./man_1_simple_shell` command to know how to use our Simpl
 | `man` | Type `man` command in this Simple Shell to have the entire description of how to use it.
 | `help` | Type `help` to know how to know 0:) Or type your request on Google.
 | `ls` | This command display the names of the files in the current path. You can use the OPTION `-l` to display the list of all the informations about this files.
-| `env` | Displays the current environment before leaving
+| `env` | Displays the current environment 
 
 ## :pencil: FILES & DIRECTORIES DESCRIPTIONS :
 
@@ -42,14 +42,15 @@ You need to type `man ./man_1_simple_shell` command to know how to use our Simpl
 | README.md | Contains all the informations of the Simple Shell project |
 | main.h | Contains the libraries and the prototypes of our functions to work the Simple Shell |
 | main.c | Main Function |
-| exec_cmd.c | Contains the function that execute the cmd |
-| get_cmd.c | Contains the function entry point |
+| inner_cmd.c | Contains the function that execute certain cmd |
+| get_args.c | Contains the function that execute certain cmd |
+| exec_cmd.c | Contains the function entry point |
 | hsh | Contains the script of the Simple Shell |
 | check_simple_shell.bash | Contains scripts of some crashtests for the checker |
 
 | Directories Names             | Descriptions
 | ----------------- | ------------------------------------------------------------------ |
-| Flowcharts | Contains the diagram explaining the order of operation of our Simple Shell  |
+| Flowcharts | Contains all flowcharts fucntions explaining the order of operation of our Simple Shell  |
 | ToStartCodingOwnShell | Contains all the exercices files to understand how to create the Simple Shell
 
 ## :keyboard: EXAMPLE OF USING A COMMAND :
@@ -81,7 +82,7 @@ drwxr-xr-x 2 root root 4096 Dec  7 05:27 tostartcodingownshell
 
 | Authors Names             | Linkedin Links                                                                |
 | ----------------- | ------------------------------------------------------------------ |
-| 🤷‍♀️ Vanessa TESSIER | [![linkedin](https://img.shields.io/badge/linkedin-white?style=for-the-badge&logo=linkedin&logoColor=black)](https://www.linkedin.com/in/vanessa-tessier-601794252/) |
+| 👩 Vanessa TESSIER | [![linkedin](https://img.shields.io/badge/linkedin-white?style=for-the-badge&logo=linkedin&logoColor=black)](https://www.linkedin.com/in/vanessa-tessier-601794252/) |
 | 👦 Redginald GODEAU | [![linkedin](https://img.shields.io/badge/linkedin-white?style=for-the-badge&logo=linkedin&logoColor=black)](https://www.linkedin.com/in/redginald-godeau-04ab8a254/) |
 | 👨 Mickaël MANGIN | [![linkedin](https://img.shields.io/badge/linkedin-white?style=for-the-badge&logo=linkedin&logoColor=black)](https://www.linkedin.com/in/micka%C3%ABl-mangin-331aa2170/) |
 
