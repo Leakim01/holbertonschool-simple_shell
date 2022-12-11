@@ -43,5 +43,6 @@ inner-.->inner_cmd[["check inner_cmd.c flowchart"]]
       
       strcmp2-->|false|exec(["error = exec_cmd(args, ev)"])-->2exit[/"free(args);\nfree(token);"/]
       exec<-.-!otherchart[["check  exec_cmd.c flowcharts"]]
-      strcmp3-->|false|return2("return error")-->2exit
+      strcmp3-->|false|return2("return error")
+      2exit-->return2
       end
