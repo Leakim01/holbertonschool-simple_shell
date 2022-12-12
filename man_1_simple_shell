@@ -82,31 +82,6 @@ inner_cmd.c@Inner SimpleShell command [env][help][exit]
 .TE
 .RE
 
-.Pp
-.Bl -tag -width -indent
-.It Fl AUTORS
-autors description
-.It Fl check_simple_shell
-script in bash for check the shell program
-.It Fl exec_cmd
-Program in C for execute the cmd
-.It Fl get_cmd
-Program in C for get the cmd
-.It Fl main.c
-Main program in C
-.It Fl main.h
-Project library with all prototypes and all libraries necessary for the good work of the program.
-.It Fl README.MD
-project Readme
-.It Fl tostartcodingownshell
-directory with all exercice requested for start the shell project
-.Op ./tostartcodingownshell
-.It Fl flowcharts
-directory with all flowcharts projects
-.Op ./flocharts
-.El
-\" Ends the list
-
 \" all Importation program
 .Sh IMPORTATION:
 .Pp
